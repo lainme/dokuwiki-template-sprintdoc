@@ -135,7 +135,7 @@ $classWideContent = (Template::getInstance())->fullWidthClass();
 /* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
 /* Wiki Title Mobile */
 /* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */ ?>
-                                    <p class="title mobile-only"><?php echo $conf['title'] ?></p>
+                                    <p class="title mobile-only"><a href="<?php echo wl(); ?>" rel="home" accesskey="h" title="[H]"><?php echo $conf['title']; ?></a></p>
                                 <?php endif ?>
                             </div><!-- .main-title -->
 
@@ -162,7 +162,7 @@ $classWideContent = (Template::getInstance())->fullWidthClass();
 /* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
 /* Wiki Title Desktop */
 /* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */ ?>
-                                <p class="title"><?php echo $conf['title'] ?></p>
+                                <p class="title"><a href="<?php echo wl(); ?>" rel="home" accesskey="h" title="[H]"><?php echo $conf['title']; ?></a></p>
                             <?php endif ?>
                             <?php if ($conf['tagline']):
 

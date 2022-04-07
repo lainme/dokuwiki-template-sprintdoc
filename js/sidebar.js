@@ -141,20 +141,14 @@ jQuery(function () {
                  * and use a direct link.
                  */
                 var $links = jQuery($wrap[0]).find('a');
-                if ($links.length === 1 && $links.first().attr('href') !== '#') {
-                    $toggler.children().first().attr('href', jQuery($links[0]).attr('href'));
-                } else {
-                    $wrap.insertAfter($me);
+                $wrap.insertAfter($me);
 
-                    if ($toggler.parent('li').length) {
-                        $toggler.parent('li').addClass('toggler');
-                    }
-
-                    if (window.sessionStorage.getItem('sidebar-section-' + sidebarId + '-' + index + '-open') === 'true') {
-                        $wrap.css('display', 'block');
-                        setTogglerClass($toggler,'is-open');
-                    }
+                if ($toggler.parent('li').length) {
+                    $toggler.parent('li').addClass('toggler');
                 }
+
+                $wrap.css('display', 'block');
+                setTogglerClass($toggler,'is-open');
 
                 // replace element with toggler
                 $me.replaceWith($toggler);
@@ -319,9 +313,7 @@ jQuery(function () {
                 //console.log(window.sessionStorage);
 
             });
-
         };
-
 
     // main
     initContentNav();
