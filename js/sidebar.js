@@ -289,8 +289,6 @@ jQuery(function () {
                 isWideContent = true;
             }
 
-
-
             /* set data attributes for sessionStorage and check onload if one of the template menus should be opened */
             $templateMenus.each(function( index ) {
                 var $t = jQuery(this).find('.nav'),
@@ -304,14 +302,10 @@ jQuery(function () {
                     if(isWideContent) {
                         window.sessionStorage.setItem('sidebar-section-' + sidebarId + '-' + tIndex + '-open', 'false');
                     } else {
-                        if (item === 'true') {
-                            jQuery(this).find('.nav-panel').css('display', 'block');
-                            setTogglerClass($toggler, 'is-open');
-                        }
+                        jQuery(this).find('.nav-panel').css('display', 'block');
+                        setTogglerClass($toggler, 'is-open');
                     }
                 }
-                //console.log(window.sessionStorage);
-
             });
         };
 
