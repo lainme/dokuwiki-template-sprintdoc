@@ -297,14 +297,11 @@ jQuery(function () {
                     tIndex = y + index;
                 $toggler.data('index', tIndex);
 
-                var item = window.sessionStorage.getItem('sidebar-section-' + sidebarId + '-' + tIndex + '-open');
-                if (item) {
-                    if(isWideContent) {
-                        window.sessionStorage.setItem('sidebar-section-' + sidebarId + '-' + tIndex + '-open', 'false');
-                    } else {
-                        jQuery(this).find('.nav-panel').css('display', 'block');
-                        setTogglerClass($toggler, 'is-open');
-                    }
+                if(isWideContent) {
+                    window.sessionStorage.setItem('sidebar-section-' + sidebarId + '-' + tIndex + '-open', 'false');
+                } else {
+                    jQuery(this).find('.nav-panel').css('display', 'block');
+                    setTogglerClass($toggler, 'is-open');
                 }
             });
         };
