@@ -147,8 +147,11 @@ jQuery(function () {
                     $toggler.parent('li').addClass('toggler');
                 }
 
-                $wrap.css('display', 'block');
-                setTogglerClass($toggler,'is-open');
+                var togglestate = window.sessionStorage.getItem('sidebar-section-' + sidebarId + '-' + index     + '-open');
+                if (togglestate === null || togglestate === 'true') {
+                    $wrap.css('display', 'block');
+                    setTogglerClass($toggler,'is-open');
+                }
 
                 // replace element with toggler
                 $me.replaceWith($toggler);
@@ -300,8 +303,11 @@ jQuery(function () {
                 if(isWideContent) {
                     window.sessionStorage.setItem('sidebar-section-' + sidebarId + '-' + tIndex + '-open', 'false');
                 } else {
-                    jQuery(this).find('.nav-panel').css('display', 'block');
-                    setTogglerClass($toggler, 'is-open');
+                    var togglestate = window.sessionStorage.getItem('sidebar-section-' + sidebarId + '-' + index     + '-open');
+                    if (togglestate === null || togglestate === 'true') {
+                        jQuery(this).find('.nav-panel').css('display', 'block');
+                        setTogglerClass($toggler, 'is-open');
+                    }
                 }
             });
         };
